@@ -1,0 +1,94 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ partial "page-title.html" . }}
+
+<!--  Section Services Start -->
+<section class="section service" style="padding-bottom: 0px !important;">
+  <div class="container">
+    <h1 class="animated fadeInUp mb-5 text-center" style="font-weight: 600;">Garage Doors</h1>
+    <div class="row justify-content-center">
+      {{ range $index, $element:= $data.service.doors }}
+      {{ $delay := mul $index 100 }}
+      <div class="col-lg-6 col-md-6">
+        <div class="d-flex mb-5" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+          <i class="{{ .icon }} text-lg"></i>
+          <div class="ml-5">
+            <h4 class="mb-3">{{ .title | markdownify }}</h4>
+            <p>{{ .content | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!--  Section Services End -->
+
+<!--  Section Services Start -->
+<section class="section service" style="padding-bottom: 0px !important;">
+  <div class="container">
+    <h1 class="animated fadeInUp mb-5 text-center" style="font-weight: 600;">Gates</h1>
+    <div class="row justify-content-center">
+      {{ range $index, $element:= $data.service.gates }}
+      {{ $delay := mul $index 100 }}
+      <div class="col-lg-6 col-md-6">
+        <div class="d-flex mb-5" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+          <i class="{{ .icon }} text-lg"></i>
+          <div class="ml-5">
+            <h4 class="mb-3">{{ .title | markdownify }}</h4>
+            <p>{{ .content | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!--  Section Services End -->
+
+
+
+<!-- service step -->
+<!-- {{ if $data.service.steps.enable }}
+{{ with $data.service.steps }}
+<section class="section feature">
+  <div class="container">
+    <div class="row">
+      {{ $.Scratch.Set "counter" 0 }}
+      {{ range $index, $element := .step }}
+      {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+      {{ $delay:= mul $index 100 }}
+      <div class="col-lg-4 text-center mb-4 mb-lg-0 col-md-6" data-aos="fade-right" data-aos-delay="{{ $delay }}">
+        <span class="text-lg font-weight-bold">{{if lt $index 9}}0{{end}}{{$.Scratch.Get `counter`}}</span>
+        <h3 class="mt-2 mb-4">{{ .title | markdownify }}</h3>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }} -->
+<!-- /service step -->
+
+<!-- clients -->
+{{ if $data.about.clients_logo.enable }}
+<section class="section">
+  <h1 class="animated fadeInUp mb-5 text-center" style="font-weight: 300 !important; font-style: italic;">Proudly Using Products From These Respected Brands</h1>
+  <div class="container">
+    <div class="row">
+      {{ range .Site.Params.clients_logo }}
+      <div class="col-lg-3 col-md-4 col-sm-4">
+        <img src="{{ .logo | absURL }}" alt="logo" class="img-fluid w-100">
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /clients -->
+
+
+{{ end }}

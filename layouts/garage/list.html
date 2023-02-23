@@ -1,0 +1,97 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ partial "page-title.html" . }}
+
+
+
+<!-- Section Testimonial Start -->
+<section class="testimonial section bg-4 bg-cover" style="background-image: url(); width: 80%; margin: auto;">
+  <div class="">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-lg-12"> -->
+          <!-- Swiper -->
+  <!-- <h1 class="animated fadeInUp mb-5 text-center" style="font-weight: 600;">Garage Doors</h1> -->
+  <div style="--swiper-navigation-color: #CC9966; --swiper-pagination-color: #CC9966" class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-zoom-container">
+          <img src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-zoom-container">
+          <img src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-zoom-container">
+          <img src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-zoom-container">
+          <img src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-zoom-container">
+          <img src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img class="img" src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img class="img" src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img class="img" src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img class="img" src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img class="img" src="https://cdn.stocksnap.io/img-thumbs/960w/nature-road_CDE7I766RZ.jpg" />
+      </div>
+    </div>
+  </div>
+
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>
+</section>
+<!-- Section Testimonial End -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 15,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  </script>
+{{ end }}

@@ -1,0 +1,40 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ with $data.homepage.team }}
+<section class="section team position-relative overflow-hidden">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <div class="section-title">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      {{ range $index, $element:= .team_member }}
+      {{ $delay:= mul $index 100 }}
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="team-item-wrap mb-5" data-aos="fade-left" data-aos-delay="{{ $delay }}">
+          <img src="{{ .image | absURL }}" alt="{{ .name }}" class="img-fluid w-100 rounded" style="height: 350px;">
+          <div class="team-item-content">
+            <h3 class="mt-0 mb-2 text-capitalize">{{ .name }}</h3>
+            <div class="my-2"><img src="/images/team/star.png" alt="" width="8%"><img src="/images/team/star.png" alt="" width="8%"><img src="/images/team/star.png" alt="" width="8%"><img src="/images/team/star.png" alt="" width="8%"><img src="/images/team/star.png" alt="" width="8%"></div>
+            <p class="text-sm mb-0">{{ .designation }}</p>
+            <ul class="team-social list-inline">
+              <li class="list-inline-item">
+                <a href="{{ .link | safeURL }}" style="display: flex; justify-content: center; align-items: center;" target="_blank">Read full review<i class="ti-arrow-right"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="row justify-content-center">
+      <a href="https://www.yelp.com/biz/ads-doors-and-gates-las-vegas" class="btn btn-main animated fadeInUp d-inline-block " style="margin: 0 auto !important; display: inline-block;" target="_blanks">See all reviews</a>
+    </div>
+  </div>
+</section>
+{{ end }}
