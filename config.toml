@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "/"
+baseURL = "https://mudassir-nawaz.github.io/"
 title = "ADS Garage Doors And Gates"
 # theme = "enov-hugo"
 # post pagination
