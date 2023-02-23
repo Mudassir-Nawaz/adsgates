@@ -160,6 +160,7 @@ ul.dropdown-menu li {
   transform: translateY(-100%);
 }
 .nav-top.awake {
+    display: none;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;

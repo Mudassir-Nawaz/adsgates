@@ -66,12 +66,12 @@ URL = "/service/"
 weight = 2
 
 [[menu.main]]
-name = "GARAGE DOORS"
+name = "GALLERY OF GARAGE DOORS"
 URL = "/gallery-of-garage-doors/"
 weight = 3
 
 [[menu.main]]
-name = "GATES"
+name = "GALLERY OF GATES"
 URL = "/gallery-of-gates/"
 weight = 4
 
@@ -117,7 +117,7 @@ weight = 3
 
 #################### default parameters ################################
 [params]
-logo = "images/logo.png"
+logo = "images/logo-white.png"
 # top header
 top_header = true
 # Meta data
