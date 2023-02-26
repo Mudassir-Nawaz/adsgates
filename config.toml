@@ -83,13 +83,15 @@ hasChildren = true
 
   [[menu.main]]
   parent = "MORE"
+  name = "SERVICE REGIONS"
+  URL = "/service-regions/"
+  weight = 1
+
+  [[menu.main]]
+  parent = "MORE"
   name = "BLOG"
   URL = "/blog/"
 
-  # [[menu.main]]
-  # parent = "MORE"
-  # name = "REVIEWS"
-  # URL = "/reviews/"
 
   [[menu.main]]
   parent = "MORE"
